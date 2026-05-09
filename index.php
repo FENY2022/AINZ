@@ -101,7 +101,7 @@ $benefits = [
             padding: 0 20px;
         }
 
-        /* --- TOP BAR NAVIGATION (NEW) --- */
+        /* --- TOP BAR NAVIGATION --- */
         .top-bar {
             position: fixed;
             top: 0;
@@ -113,12 +113,11 @@ $benefits = [
             background: transparent;
         }
 
-        /* State when user scrolls down */
         .top-bar.scrolled {
             background: rgba(18, 18, 18, 0.95);
             backdrop-filter: blur(10px);
             padding: 15px 0;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.3); /* subtle soft gold line */
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
         }
 
         .nav-container {
@@ -172,7 +171,6 @@ $benefits = [
             width: 100%;
         }
 
-        /* Mobile Menu Toggle */
         .hamburger {
             display: none;
             color: var(--ivory-white);
@@ -198,8 +196,8 @@ $benefits = [
         .hero::before {
             content: '';
             position: absolute;
-            width: 400px;
-            height: 400px;
+            width: 800px; 
+            height: 800px;
             background: radial-gradient(circle, rgba(212,175,55,0.15) 0%, rgba(18,18,18,0) 70%);
             top: 50%;
             left: 50%;
@@ -209,22 +207,30 @@ $benefits = [
 
         .hero-content {
             z-index: 1;
+            width: 100%;
+            padding: 0 20px;
         }
 
-        .hero h1 {
-            font-size: 5rem;
-            letter-spacing: 6px;
-            margin-bottom: 10px;
-            text-transform: uppercase;
+        /* Adjusted margin-bottom to bring the text closer */
+        .hero-logo {
+            width: 100%;
+            max-width: 750px; 
+            height: auto;
+            margin-bottom: -120px; /* Reduced from 25px */
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
         }
 
+        /* Adjusted margin-top to pull it up towards the logo */
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             font-style: italic;
             font-family: var(--font-title);
             color: var(--rose-gold);
+            margin-top: -15px; /* Negative margin pulls it closer */
             margin-bottom: 40px;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
         }
 
         .btn {
@@ -370,7 +376,6 @@ $benefits = [
             background: rgba(255, 255, 255, 0.02);
         }
 
-        /* Add your generated banner image path here */
         .about-banner {
             width: 100%;
             height: auto;
@@ -478,11 +483,11 @@ $benefits = [
 
         /* --- RESPONSIVE DESIGN --- */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 3rem; }
+            .hero-logo { max-width: 90%; }
             .btn { margin-bottom: 15px; display: block; width: 100%; max-width: 250px; margin-left: auto; margin-right: auto; }
             
             .nav-links {
-                display: none; /* Hide desktop links */
+                display: none; 
                 flex-direction: column;
                 position: absolute;
                 top: 100%;
@@ -525,7 +530,7 @@ $benefits = [
 
     <header id="home" class="hero">
         <div class="hero-content">
-            <h1>AINZ Fragrances</h1>
+            <img src="logo/mainlogo.png" alt="AINZ Fragrances Logo" class="hero-logo">
             <p>“Fragrances for the Unforgettable”</p>
             <div>
                 <a href="#collection" class="btn">Shop Collection</a>
@@ -554,7 +559,7 @@ $benefits = [
             <h2 class="section-title">The Brand</h2>
             
             <div class="about-banner-container">
-                <img src="banner.png" alt="AINZ Signature Scents Banner" class="about-banner" onerror="this.style.display='none'">
+                <img src="logo/banner.png" alt="AINZ Signature Scents Banner" class="about-banner" onerror="this.style.display='none'">
             </div>
 
             <p class="about-text">
