@@ -209,28 +209,35 @@ $benefits = [
             z-index: 1;
             width: 100%;
             padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        /* Adjusted margin-bottom to bring the text closer */
+        /* Logo Layout Desktop */
         .hero-logo {
             width: 100%;
-            max-width: 750px; 
+            max-width: 650px; /* Slightly adjusted to stay crisp */
             height: auto;
-            margin-bottom: -120px; /* Reduced from 25px */
+            object-fit: contain;
+            /* Negative margin pulls the text below it upwards */
+            margin-bottom: -50px; 
             display: block;
-            margin-left: auto;
-            margin-right: auto;
+            position: relative;
+            z-index: 2;
         }
 
-        /* Adjusted margin-top to pull it up towards the logo */
+        /* Subtitle Text Desktop */
         .hero p {
             font-size: 1.3rem;
             font-style: italic;
             font-family: var(--font-title);
             color: var(--rose-gold);
-            margin-top: -15px; /* Negative margin pulls it closer */
+            margin-top: 0;
             margin-bottom: 40px;
             letter-spacing: 1.5px;
+            position: relative;
+            z-index: 2;
         }
 
         .btn {
@@ -246,6 +253,8 @@ $benefits = [
             transition: all 0.4s ease;
             cursor: pointer;
             margin: 0 10px;
+            position: relative;
+            z-index: 2;
         }
 
         .btn:hover {
@@ -481,10 +490,28 @@ $benefits = [
             letter-spacing: 1px;
         }
 
-        /* --- RESPONSIVE DESIGN --- */
+        /* --- RESPONSIVE DESIGN FOR MOBILE --- */
         @media (max-width: 768px) {
-            .hero-logo { max-width: 90%; }
-            .btn { margin-bottom: 15px; display: block; width: 100%; max-width: 250px; margin-left: auto; margin-right: auto; }
+            
+            /* Logo resizing specifically for mobile */
+            .hero-logo { 
+                max-width: 85%; /* Keeps a nice padding on the sides */
+                margin-bottom: -20px; /* Less negative margin needed because the image shrinks */
+            }
+
+            .hero p {
+                font-size: 1.1rem; /* Slightly smaller text for mobile */
+                margin-bottom: 30px;
+            }
+
+            .btn { 
+                margin-bottom: 15px; 
+                display: block; 
+                width: 100%; 
+                max-width: 250px; 
+                margin-left: auto; 
+                margin-right: auto; 
+            }
             
             .nav-links {
                 display: none; 
